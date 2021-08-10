@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.offshore_employees_v3.Reports_Controller">
+   <children>
+      <AnchorPane AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="92.0" stroke="BLACK" strokeType="INSIDE" width="1000.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <fill>
+                  <RadialGradient centerX="0.07777777777777778" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#c61919" />
+                        <Stop color="#5e3939" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+            </Rectangle>
+         </children>
+      </AnchorPane>
+      <Label layoutX="14.0" layoutY="17.0" text="REPORTS" textFill="#f2dbdb">
+         <font>
+            <Font name="Agency FB Bold" size="55.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9e9c9c" height="53.0" layoutY="92.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="1000.0" />
+      <Label layoutX="14.0" layoutY="105.0" text="SELECT EMPLOYEE:" textFill="WHITE">
+         <font>
+            <Font name="Californian FB Bold" size="24.0" />
+         </font>
+         <effect>
+            <DropShadow height="98.09" radius="54.475" width="121.81" />
+         </effect>
+      </Label>
+      <TextField fx:id="txtfield_employee_number" layoutX="263.0" layoutY="106.0" onKeyPressed="#search_employee_ENTER" prefHeight="25.0" prefWidth="98.0" promptText="Scotlynn ID">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </TextField>
+      <Button fx:id="btn_go" layoutX="369.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#go_search_for_employee" text="GO" textFill="#0a8606">
+         <font>
+            <Font name="Californian FB Bold" size="15.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <TabPane layoutY="145.0" prefHeight="658.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="WORK HOURS">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="533.0" prefWidth="754.0" style="-fx-background-color: black;">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e1e1e1" height="41.0" layoutX="-3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="1007.0" />
+                        <DatePicker fx:id="datepicker_start" layoutX="14.0" layoutY="9.0" onAction="#set_start_date" promptText="Start Date">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </DatePicker>
+                        <DatePicker fx:id="datepicker_end" layoutX="197.0" layoutY="8.0" onAction="#set_end_date" promptText="End Date">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </DatePicker>
+                        <ImageView fitHeight="578.0" fitWidth="976.0" layoutX="13.0" layoutY="45.0" opacity="0.86" pickOnBounds="true">
+                           <image>
+                              <Image url="@images/field.png" />
+                           </image>
+                        </ImageView>
+                        <Accordion layoutX="307.0" layoutY="52.0" prefHeight="553.0" prefWidth="675.0">
+                          <panes>
+                            <TitledPane animated="false" text="WORK HOURS">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: grey;">
+                                       <children>
+                                          <TableView fx:id="tblview_work_hours" layoutX="21.0" layoutY="7.0" prefHeight="424.0" prefWidth="641.0">
+                                            <columns>
+                                              <TableColumn fx:id="col_HW_empID" prefWidth="68.00000309944153" text="EMP. ID" />
+                                              <TableColumn fx:id="col_HW_name" prefWidth="167.0" text="NAME" />
+                                                <TableColumn fx:id="col_HW_hours" prefWidth="91.0" text="HOURS" />
+                                                <TableColumn fx:id="col_HW_days_worked" prefWidth="202.0" text="DAYS WORKED (4+ hrs)" />
+                                                <TableColumn fx:id="col_HW_cost" prefWidth="111.0" text="COST" />
+                                            </columns>
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                          </TableView>
+                                          <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f5f5" height="36.0" layoutX="21.0" layoutY="446.0" stroke="BLACK" strokeType="INSIDE" width="641.0">
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                          </Rectangle>
+                                          <Label layoutX="29.0" layoutY="453.0" text="GRAND TOTAL">
+                                             <font>
+                                                <Font name="Courier New Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lbl_hours" layoutX="299.0" layoutY="456.0">
+                                             <font>
+                                                <Font name="Courier New Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lbl_cost" layoutX="523.0" layoutY="454.0" prefHeight="22.0" prefWidth="131.0">
+                                             <font>
+                                                <Font name="Courier New Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lbl_no_employee_selected" layoutX="263.0" layoutY="446.0" prefHeight="36.0" prefWidth="285.0" textFill="RED">
+                                             <font>
+                                                <Font name="Courier New Bold" size="17.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                                 <font>
+                                    <Font name="Californian FB Bold" size="14.0" />
+                                 </font>
+                            </TitledPane>
+                            <TitledPane animated="false" text="JOB COSTING">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-: GREY;">
+                                       <children>
+                                          <TableView fx:id="tblview_job_costing" layoutX="9.0" layoutY="4.0" prefHeight="203.0" prefWidth="655.0">
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                             <columns>
+                                                <TableColumn fx:id="col_JC_date" prefWidth="96.0" text="DATE" />
+                                                <TableColumn fx:id="col_job_name" prefWidth="195.0" text="JOB NAME" />
+                                                <TableColumn fx:id="col_JC_hours" prefWidth="178.0" text="HOURS" />
+                                                <TableColumn fx:id="col_JC_cost" prefWidth="185.0" text="COST" />
+                                             </columns>
+                                          </TableView>
+                                          <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f5f5" height="36.0" layoutX="8.0" layoutY="217.0" stroke="BLACK" strokeType="INSIDE" width="657.0">
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                          </Rectangle>
+                                          <Label layoutX="22.0" layoutY="224.0" text="GRAND TOTAL">
+                                             <font>
+                                                <Font name="Courier New Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lbl_JCBD_hours" layoutX="311.0" layoutY="226.0" text="HOURS">
+                                             <font>
+                                                <Font name="Courier New Bold" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lbl_JCBD_cost" layoutX="567.0" layoutY="225.0" prefHeight="20.0" prefWidth="98.0" text="COST">
+                                             <font>
+                                                <Font name="Courier New Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TableView fx:id="tblview_job_costing_by_day" layoutX="9.0" layoutY="267.0" prefHeight="172.0" prefWidth="655.0">
+                                            <columns>
+                                              <TableColumn fx:id="col_JCBD_date" prefWidth="124.0" text="DATE" />
+                                                <TableColumn fx:id="col_JCBD_hours" prefWidth="529.0" text="HOURS" />
+                                            </columns>
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </TableView>
+                                          <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f5f5" height="36.0" layoutX="9.0" layoutY="446.0" stroke="BLACK" strokeType="INSIDE" width="657.0">
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                          </Rectangle>
+                                          <Label layoutX="22.0" layoutY="453.0" text="GRAND TOTAL">
+                                             <font>
+                                                <Font name="Courier New Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lbl_JC_hours" layoutX="312.0" layoutY="455.0" text="HOURS">
+                                             <font>
+                                                <Font name="Courier New Bold" size="17.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lbl_JC_cost" layoutX="567.0" layoutY="455.0" prefHeight="20.0" prefWidth="98.0" text="COST">
+                                             <font>
+                                                <Font name="Courier New Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                                 <font>
+                                    <Font name="Californian FB Bold" size="14.0" />
+                                 </font>
+                            </TitledPane>
+                          </panes>
+                        </Accordion>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8f959a" height="551.0" layoutX="16.0" layoutY="51.0" opacity="0.79" stroke="BLACK" strokeType="INSIDE" width="285.0" />
+                        <TilePane layoutX="9.0" layoutY="50.0" orientation="VERTICAL" prefHeight="590.0" prefWidth="300.0">
+                           <children>
+                              <Button fx:id="btn_work_hours" mnemonicParsing="false" onMouseClicked="#get_total_work_hours" prefHeight="85.0" prefWidth="125.0" text="WORK HOURS" textAlignment="CENTER" wrapText="true">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <font>
+                                    <Font name="Californian FB Bold" size="15.0" />
+                                 </font>
+                                 <TilePane.margin>
+                                    <Insets bottom="20.0" left="10.0" right="10.0" top="10.0" />
+                                 </TilePane.margin>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+                              </Button>
+                              <Button fx:id="btn_work_hours_employee" mnemonicParsing="false" onMouseClicked="#get_work_hours_by_employee" prefHeight="85.0" prefWidth="120.0" text="WORK HOURS BY EMPLOYEE" textAlignment="CENTER" wrapText="true" TilePane.alignment="BOTTOM_LEFT">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <font>
+                                    <Font name="Californian FB Bold" size="15.0" />
+                                 </font>
+                                 <TilePane.margin>
+                                    <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                                 </TilePane.margin>
+                              </Button>
+                              <Button fx:id="btn_export_work_hours" mnemonicParsing="false" onMouseClicked="#export_total_work_hours" prefHeight="85.0" prefWidth="120.0" text="EXPORT WORK HOURS" textAlignment="CENTER" wrapText="true">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <font>
+                                    <Font name="Californian FB Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="58.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/excel_icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <TilePane.margin>
+                                    <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                                 </TilePane.margin>
+                              </Button>
+                              <Button fx:id="btn_export_employee_work_hours" mnemonicParsing="false" onMouseClicked="#export_work_hours_by_employee" prefHeight="90.0" prefWidth="125.0" text="EXPORT WORK HOURS BY EMPLOYEE" textAlignment="CENTER" wrapText="true">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <font>
+                                    <Font name="Californian FB Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="58.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/excel_icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <TilePane.margin>
+                                    <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                                 </TilePane.margin>
+                              </Button>
+                              <Button fx:id="btn_job_costing" mnemonicParsing="false" onMouseClicked="#get_job_costing" prefHeight="85.0" prefWidth="120.0" text="JOB COSTING" textAlignment="CENTER" wrapText="true">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <font>
+                                    <Font name="Californian FB Bold" size="15.0" />
+                                 </font>
+                                 <TilePane.margin>
+                                    <Insets bottom="20.0" left="10.0" right="10.0" top="10.0" />
+                                 </TilePane.margin>
+                              </Button>
+                              <Button fx:id="btn_job_costing_by_day" mnemonicParsing="false" onMouseClicked="#get_job_costing_by_day" prefHeight="85.0" prefWidth="120.0" text="JOB COSTING BY DAY" textAlignment="CENTER" wrapText="true">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <font>
+                                    <Font name="Californian FB Bold" size="15.0" />
+                                 </font>
+                                 <TilePane.margin>
+                                    <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                                 </TilePane.margin>
+                              </Button>
+                              <Button fx:id="btn_export_job_costing" mnemonicParsing="false" onMouseClicked="#export_job_costing" prefHeight="85.0" prefWidth="120.0" text="EXPORT JOB COSTING" textAlignment="CENTER" wrapText="true">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <font>
+                                    <Font name="Californian FB Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="58.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/excel_icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <TilePane.margin>
+                                    <Insets bottom="20.0" left="5.0" right="5.0" top="20.0" />
+                                 </TilePane.margin>
+                              </Button>
+                              <Button fx:id="btn_export_job_costing_by_day" mnemonicParsing="false" onMouseClicked="#export_job_costing_by_day" prefHeight="90.0" prefWidth="120.0" text="EXPORT JOB COSTING BY DAY" textAlignment="CENTER" wrapText="true">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <font>
+                                    <Font name="Californian FB Bold" size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="58.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/excel_icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <TilePane.margin>
+                                    <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                                 </TilePane.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </TilePane>
+                        <Label fx:id="lbl_work_hours_date_range" layoutX="513.0" layoutY="8.0">
+                           <font>
+                              <Font name="Agency FB Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbl_report_created" layoutX="51.0" layoutY="52.0" text="REPORT HAS BEEN CREATED" textFill="#1100ff" visible="false">
+                           <font>
+                              <Font name="Courier New Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="FORMS">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: black;">
+                     <children>
+                        <ImageView fitHeight="600.0" fitWidth="971.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@images/paperwork.png" />
+                           </image>
+                        </ImageView>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8f959a" height="435.0" layoutX="23.0" layoutY="74.0" opacity="0.79" stroke="BLACK" strokeType="INSIDE" width="235.0" />
+                        <VBox layoutX="54.0" layoutY="98.0" prefHeight="433.0" prefWidth="188.0" spacing="65.0" AnchorPane.leftAnchor="54.0">
+                           <children>
+                              <Button fx:id="btn_daily_covid_signoff" mnemonicParsing="false" onMouseClicked="#get_daily_covid_sign_off" prefHeight="85.0" prefWidth="176.0" text="DAILY COVID SIGN-OFF">
+                                 <font>
+                                    <Font name="Californian FB Bold" size="13.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btn_covid_email_forms" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#get_covid_email_forms" prefHeight="85.0" prefWidth="176.0" text="COVID/EMAIL FORMS">
+                                 <font>
+                                    <Font name="Californian FB Bold" size="13.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btn_export_croptracker" layoutX="10.0" layoutY="95.0" mnemonicParsing="false" onMouseClicked="#export_employees_to_cropTracker" prefHeight="85.0" prefWidth="176.0" text="EXPORT EMPLOYEES TO CROP TRACKER" textAlignment="CENTER" wrapText="true">
+                                 <graphic>
+                                    <ImageView fitHeight="33.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/excel_icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Californian FB Bold" size="13.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </VBox>
+                        <Pane layoutX="273.0" layoutY="81.0" prefHeight="427.0" prefWidth="698.0">
+                           <children>
+                              <Rectangle fx:id="rectangle_forms" arcHeight="5.0" arcWidth="5.0" fill="#e1e1e1" height="437.0" layoutX="-2.0" layoutY="-5.0" opacity="0.79" stroke="BLACK" strokeType="INSIDE" width="703.0" />
+                              <Label fx:id="lbl_forms_choice" layoutX="191.0" layoutY="36.0" text="DAILY COVID SIGN-OFF">
+                                 <font>
+                                    <Font name="Californian FB Bold" size="31.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbl_pick_start_date" layoutX="287.0" layoutY="84.0" text="PICK START DATE">
+                                 <font>
+                                    <Font name="Californian FB Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker fx:id="datepicker_covid_start_date" layoutX="230.0" layoutY="113.0" prefHeight="36.0" prefWidth="274.0" promptText="YYYY/MM/DD">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect></DatePicker>
+                              <Button fx:id="btn_print_covid_signoff" layoutX="275.0" layoutY="259.0" mnemonicParsing="false" onMouseClicked="#print_daily_covid_signoff" prefHeight="28.0" prefWidth="201.0" text="CREATE FORM">
+                                 <font>
+                                    <Font name="Californian FB Bold" size="16.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Label fx:id="lbl_covid_email_forms" layoutX="218.0" layoutY="37.0" text="COVID/EMAIL FORMS" visible="false">
+                                 <font>
+                                    <Font name="Californian FB Bold" size="30.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbl_current_employee" layoutX="230.0" layoutY="93.0" text="CURRENT EMPLOYEE: #" visible="false">
+                                 <font>
+                                    <Font name="Courier New Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbl_current_employee_number" layoutX="445.0" layoutY="93.0" textFill="RED">
+                                 <font>
+                                    <Font name="Courier New Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btn_print_covid_email" layoutX="303.0" layoutY="168.0" mnemonicParsing="false" onMouseClicked="#print_covid_email_forms" text="CREATE FORM" textFill="#009416" visible="false">
+                                 <font>
+                                    <Font name="Californian FB Bold" size="17.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect></Button>
+                              <Label fx:id="lbl_form_created" alignment="CENTER" contentDisplay="CENTER" layoutX="122.0" layoutY="337.0" prefHeight="20.0" prefWidth="508.0" textAlignment="CENTER" textFill="#2419ff">
+                                 <font>
+                                    <Font name="Courier New Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lbl_house_id" layoutX="298.0" layoutY="168.0" text="SELECT HOUSE ID" visible="false">
+                                 <font>
+                                    <Font name="Californian FB Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="combobox_house_id" layoutX="292.0" layoutY="201.0" prefWidth="150.0">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect></ComboBox>
+                           </children>
+                        </Pane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Button fx:id="btn_home" layoutX="732.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#go_home" text="HOME">
+         <font>
+            <Font name="Californian FB Bold" size="16.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/home_icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btn_quit" layoutX="863.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#quit_program" prefHeight="36.0" prefWidth="106.0" text="QUIT">
+         <font>
+            <Font name="Californian FB Bold" size="16.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="43.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/quit_icon.jpg" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label fx:id="lbl_no_employee_hours" layoutX="442.0" layoutY="95.0" prefHeight="53.0" prefWidth="116.0" textAlignment="CENTER" textFill="#c93030" wrapText="true">
+         <font>
+            <Font name="Courier New Bold" size="11.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_selected_employee" layoutX="573.0" layoutY="111.0" textFill="#116827">
+         <font>
+            <Font name="Courier New Bold" size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

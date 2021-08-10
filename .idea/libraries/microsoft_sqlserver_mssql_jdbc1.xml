@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="microsoft.sqlserver.mssql.jdbc1" type="repository">
+    <properties maven-id="com.microsoft.sqlserver:mssql-jdbc:9.3.0.jre15-preview" />
+    <ANNOTATIONS>
+      <root url="file://$USER_HOME$/Java/Microsoft JDBC Driver 6.0 for SQL Server/sqljdbc_6.0/enu/auth/x64" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/microsoft/sqlserver/mssql-jdbc/9.3.0.jre15-preview/mssql-jdbc-9.3.0.jre15-preview.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchor_main" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.offshore_employees_v3.Login_Controller">
+   <children>
+      <ImageView fitHeight="803.0" fitWidth="1000.0" pickOnBounds="true" style="-fx-opacity: 0.3;">
+         <image>
+            <Image url="@images/scotlynn_sweet_pac.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="162.0" fitWidth="1000.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/SCOTLYNN_IMAGE.PNG" />
+         </image>
+      </ImageView>
+      <Label fx:id="lbl_invalid_credentials" layoutX="605.0" layoutY="488.0" textFill="#ff3f3f">
+         <font>
+            <Font name="Courier New Bold" size="16.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <Label layoutX="247.0" layoutY="199.0" text="MIGRANT EMPLOYEE DATABASE">
+         <font>
+            <Font name="Agency FB Bold" size="52.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+            </Lighting>
+         </effect>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#485057" height="25.0" layoutY="150.0" stroke="BLACK" strokeType="INSIDE" width="1000.0" />
+      <Button fx:id="btn_continue_to_program" layoutX="643.0" layoutY="670.0" mnemonicParsing="false" onMouseClicked="#continue_to_program" prefHeight="80.0" prefWidth="324.0" text="CONTINUE TO PROGRAM" visible="false">
+         <font>
+            <Font name="Californian FB Bold" size="19.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Label fx:id="lbl_connected" layoutX="454.0" layoutY="545.0" text="CONNECTED" textFill="#378314" visible="false">
+         <font>
+            <Font name="Courier New Bold" size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

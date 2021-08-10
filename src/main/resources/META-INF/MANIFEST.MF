@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: com.example.offshore_employees_v3.Main
+Class-Path: Offshore_Employees_V3-1.0-SNAPSHOT.jar
+

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="sqljdbc_6">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/Microsoft JDBC Driver 6.0 for SQL Server/sqljdbc_6.0" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/Microsoft JDBC Driver 6.0 for SQL Server/sqljdbc_6.0" recursive="false" />
+  </library>
+</component>
